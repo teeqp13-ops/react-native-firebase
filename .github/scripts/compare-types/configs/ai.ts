@@ -107,9 +107,54 @@ const config: PackageConfig = {
         'RN Firebase schema-builder does not currently expose the `anyOf` helper class, so union-schema composition is not part of the public RN AI API.',
     },
     {
+      name: 'ContextWindowCompressionConfig',
+      reason:
+        'RN Firebase live sessions do not currently expose JS SDK context-window compression controls.',
+    },
+    {
+      name: 'GoogleMaps',
+      reason:
+        'Google Maps grounding/tool support is not currently part of the public RN Firebase AI API.',
+    },
+    {
+      name: 'GoogleMapsGroundingChunk',
+      reason:
+        'RN Firebase grounding metadata currently exposes web grounding chunks only and does not surface Google Maps grounding chunks.',
+    },
+    {
+      name: 'GoogleMapsTool',
+      reason:
+        'RN Firebase tools do not currently expose the JS SDK Google Maps grounding tool.',
+    },
+    {
+      name: 'ImageConfig',
+      reason:
+        'RN Firebase generation config does not currently expose the JS SDK image generation configuration surface.',
+    },
+    {
+      name: 'ImageConfigAspectRatio',
+      reason:
+        'RN Firebase does not currently expose JS SDK image generation aspect-ratio presets in the public AI types.',
+    },
+    {
+      name: 'ImageConfigImageSize',
+      reason:
+        'RN Firebase does not currently expose JS SDK image generation size presets in the public AI types.',
+    },
+    {
+      name: 'LatLng',
+      reason:
+        'Coordinate typing is only used by the JS SDK Google Maps grounding surface, which RN Firebase does not currently expose.',
+    },
+    {
       name: 'LiveServerGoingAwayNotice',
       reason:
         'RN Firebase live sessions do not currently surface the server `goingAwayNotice` message type in the public API.',
+    },
+    {
+      name: 'LiveSessionResumptionUpdate',
+      reason:
+        'RN Firebase live sessions do not currently surface JS SDK session-resumption update messages in the public API.',
     },
     {
       name: 'ObjectSchemaRequest',
@@ -117,9 +162,24 @@ const config: PackageConfig = {
         'RN Firebase exposes `ObjectSchemaInterface` for schema helper typing, but does not separately export the raw request-shape `ObjectSchemaRequest` type.',
     },
     {
+      name: 'RetrievalConfig',
+      reason:
+        'RN Firebase tool configuration does not currently expose the JS SDK retrieval configuration surface.',
+    },
+    {
+      name: 'SessionResumptionConfig',
+      reason:
+        'RN Firebase live model connection APIs do not currently expose JS SDK session-resumption configuration.',
+    },
+    {
       name: 'SingleRequestOptions',
       reason:
         'RN Firebase does not currently expose per-call request overrides such as `AbortSignal`; requests are configured via model-level `RequestOptions` only.',
+    },
+    {
+      name: 'SlidingWindow',
+      reason:
+        'Sliding-window compression is part of the JS SDK context-window compression surface, which RN Firebase does not currently expose.',
     },
     {
       name: 'ChatSessionBase',
@@ -150,6 +210,11 @@ const config: PackageConfig = {
       name: 'TemplateTool',
       reason:
         'Template tool unions are part of firebase-js-sdk template tooling that RN Firebase does not currently expose.',
+    },
+    {
+      name: 'TemplateToolConfig',
+      reason:
+        'Template tool configuration is part of the JS SDK template tooling surface, which RN Firebase does not currently expose.',
     },
     {
       name: 'ThinkingLevel',
@@ -196,6 +261,11 @@ const config: PackageConfig = {
         'RN Firebase does not expose `inferenceSource` because hybrid on-device / in-cloud inference is a browser-only feature.',
     },
     {
+      name: 'FinishReason',
+      reason:
+        'RN Firebase currently exposes the earlier finish-reason enum subset and does not surface the newer JS SDK image, language, tool-call, thought-signature, and malformed-response finish reasons.',
+    },
+    {
       name: 'Citation',
       reason:
         'RN Firebase inlines the protobuf date type as local `Date`, while the firebase-js-sdk declaration references a generated alias name. The public structure is equivalent.',
@@ -226,6 +296,16 @@ const config: PackageConfig = {
         'RN Firebase function responses omit the optional `parts` field from the JS SDK declaration and only expose the structured response payload.',
     },
     {
+      name: 'GroundingChunk',
+      reason:
+        'RN Firebase grounding chunks do not currently include the JS SDK Google Maps grounding variant.',
+    },
+    {
+      name: 'GroundingMetadata',
+      reason:
+        'RN Firebase grounding metadata does not currently surface Google Maps widget context tokens from the JS SDK API.',
+    },
+    {
       name: 'GenerationConfig',
       reason:
         'RN Firebase does not currently expose the JS SDK `responseJsonSchema` generation config field.',
@@ -239,6 +319,16 @@ const config: PackageConfig = {
       name: 'ImagenModel',
       reason:
         'RN Firebase Imagen model requests do not currently accept per-call `SingleRequestOptions`, so request overrides are limited to model-level `RequestOptions`.',
+    },
+    {
+      name: 'LiveGenerationConfig',
+      reason:
+        'RN Firebase live generation config does not currently expose JS SDK context-window compression settings.',
+    },
+    {
+      name: 'LiveGenerativeModel',
+      reason:
+        'RN Firebase live model connections do not currently accept JS SDK session-resumption configuration.',
     },
     {
       name: 'LiveResponseType',
@@ -289,6 +379,16 @@ const config: PackageConfig = {
       name: 'ThinkingConfig',
       reason:
         'RN Firebase thinking config supports `thinkingBudget` and `includeThoughts`, but does not currently expose the JS SDK `thinkingLevel` preset field.',
+    },
+    {
+      name: 'Tool',
+      reason:
+        'RN Firebase tools do not currently include the JS SDK Google Maps grounding tool variant.',
+    },
+    {
+      name: 'ToolConfig',
+      reason:
+        'RN Firebase tool config currently exposes function calling config only and omits the JS SDK retrieval config field.',
     },
     {
       name: 'TypedSchema',
